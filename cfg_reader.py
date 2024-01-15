@@ -12,7 +12,7 @@ class Settings(BaseSettings):
     # В данном случае будет использоваться файла .env, который будет прочитан
     # с кодировкой UTF-8
 
-    model_config = SettingsConfigDict(env_file='.env', env_file_encoding='utf-8', extra='ignore')
+    model_config = SettingsConfigDict(env_file='../.env', env_file_encoding='utf-8', extra='ignore')
 
 
 # При импорте файла сразу создастся

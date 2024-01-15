@@ -8,7 +8,7 @@ import g4f
 
 class Tbot:
     BOT_TOKEN = config.bot_token_t.get_secret_value()
-    #CHANNEL_ID = config.channel_id_t
+    CHANNEL_ID = config.channel_id_t
     in_work = 0
     filter_rating = 4
     filter_feedbacks = 1600
@@ -19,7 +19,7 @@ class Tbot:
 
     def __init__(self):
         self.dp = Dispatcher()
-        self.bot = Bot(token=Tbot.BOT_TOKEN, parse_mode='HTML')
+        self.bot = Bot(token=Tbot.BOT_TOKEN, parse_mode='MARKDOWN_V2')
         # Словарь для хранения истории разговоров
         self.conversation_history = {}
 
