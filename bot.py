@@ -1,5 +1,6 @@
 from cfg_reader import config
 from aiogram import Bot, Dispatcher, types
+from aiogram.enums import ParseMode
 from aiogram.types import Message, URLInputFile, BufferedInputFile
 from aiogram.filters import Command, CommandObject
 from datetime import datetime
@@ -19,7 +20,7 @@ class Tbot:
 
     def __init__(self):
         self.dp = Dispatcher()
-        self.bot = Bot(token=Tbot.BOT_TOKEN, parse_mode='MARKDOWN_V2')
+        self.bot = Bot(token=Tbot.BOT_TOKEN, parse_mode='HTML')
         # Словарь для хранения истории разговоров
         self.conversation_history = {}
 
@@ -89,4 +90,4 @@ async def send_welcome(message: types.Message):
     print(tbot.conversation_history)
     length = sum(len(message["content"]) for message in tbot.conversation_history[user_id])
     print(length)
-    await message.answer(chat_gpt_response)
+    await message.answer(chat_gpt_response, parse_mode=ParseMode.MARKDOWN_V2)
