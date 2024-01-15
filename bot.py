@@ -1,4 +1,4 @@
-#from cfg_reader import config
+from cfg_reader import config
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import Message, URLInputFile, BufferedInputFile
 from aiogram.filters import Command, CommandObject
@@ -7,7 +7,8 @@ import g4f
 
 
 class Tbot:
-    BOT_TOKEN = '6952712860:AAHHXFN6KF_odEiiMT_frHMP__Z1eXFbklk'
+    BOT_TOKEN = config.bot_token_t.get_secret_value()
+    #CHANNEL_ID = config.channel_id_t
     in_work = 0
     filter_rating = 4
     filter_feedbacks = 1600

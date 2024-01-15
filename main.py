@@ -12,7 +12,7 @@ async def main():
     async def main_bot():
         print('started')
         # await dp.start_polling(bot)   # Запуск бота без параметров
-        await tbot.bot.delete_webhook()
+        # await tbot.bot.delete_webhook()
         await tbot.dp.start_polling(tbot.bot, mylist=[1, 2, 3])   # Передача параметров в бота через параметры (именованые kwargs)
 
     async def msg_queue():
